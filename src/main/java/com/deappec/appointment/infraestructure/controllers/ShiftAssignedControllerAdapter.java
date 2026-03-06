@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class ShiftAssignedControllerAdapter {
 
 	private final ShiftAssignedService service;
+	private final SendEm
 	private final ShiftAssignedControllerMapper mapper;
 
 	@PostMapping
