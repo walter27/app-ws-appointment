@@ -30,6 +30,9 @@ public class ShiftAssignedEntity {
 
 	@Column(name = "date_register")
 	private LocalDateTime dateRegister;
+	
+	@Column(name = "file_path")
+	private String filePath;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "customer_id")

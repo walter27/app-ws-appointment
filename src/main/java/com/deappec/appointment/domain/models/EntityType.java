@@ -1,7 +1,5 @@
 package com.deappec.appointment.domain.models;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,13 +9,9 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShiftAssigned {
+public class EntityType {
 
 	private Long id;
-	private LocalDateTime dateRegister;
-	private Customer customer;
-	private Employee employee;
-	private Appointment appointment;
-	private String filePath;
-
+	private String name;
+	private String description;
 }
