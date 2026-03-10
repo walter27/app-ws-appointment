@@ -24,7 +24,6 @@ public class ShiftAssignedCreateDto {
 	@NotNull(message = "appointmentId is required")
 	@Positive(message = "appointmentId must be greater than 0")
 	private Long appointmentId;
-	@NotNull(message = "attached file is required")
 	private MultipartFile attached;
 
 }

@@ -26,9 +26,8 @@ public class CustomerControllerAdapter {
 	
 	@PostMapping
 	public ResponseEntity<CustomerDto> save(@Valid @RequestBody CustomerDto customerDto){
-		  return ResponseEntity.status(HttpStatus.CREATED)
-			        .body(mapper.toCustomer(
-			            service.save(mapper.toCustomerDto(customerDto))));
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(mapper.toCustomer(service.save(mapper.toCustomerDto(customerDto))));
 	}
 
 }

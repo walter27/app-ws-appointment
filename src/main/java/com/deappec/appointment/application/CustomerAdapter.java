@@ -36,6 +36,10 @@ public class CustomerAdapter implements CustomerService {
 				.orElseThrow(EntityTypeException::new);
 		//customer.setDocumentType(documentType);
 		customer.setEntityType(entityType);
+		if (Objects.isNull(customer.getDni()) || customer.getDni().isBlank()) {
+			return repositoryCus.save(customer);
+		}
+
 		return repositoryCus.findByDni(customer.getDni()).map(customerSearch -> {
 			customerSearch.setEmail(customer.getEmail());
 			customerSearch.setLastName(customer.getLastName());
@@ -49,7 +53,7 @@ public class CustomerAdapter implements CustomerService {
 	}
 
 	private void validateCustomer(Customer customer) {
-		if (Objects.isNull(customer) || Objects.isNull(customer.getDni()) || customer.getDni().isBlank()) {
+		if (Objects.isNull(customer)) {
 			throw new CustomerException();
 		}
 		/*if (Objects.isNull(customer.getDocumentType()) || Objects.isNull(customer.getDocumentType().getId())) {
